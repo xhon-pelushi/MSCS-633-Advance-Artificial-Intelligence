@@ -1,0 +1,4 @@
+# Manifest for the AI QR Code Generator
+# Install with: pip install -r requirements.txt
+
+qrcode[pil]==8.2
