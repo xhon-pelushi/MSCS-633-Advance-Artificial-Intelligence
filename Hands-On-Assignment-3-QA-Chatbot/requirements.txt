@@ -1,0 +1,32 @@
+# Manifest for the Q&A Chatbot — MSCS-633-M20 Hands-On Assignment 3
+#
+# Install with:
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements.txt
+#   .venv/bin/python -m spacy download en_core_web_sm
+#
+# The spaCy language model is fetched separately because it is published as a
+# release asset rather than on PyPI.
+
+# Conversational engine. Version 1.2.x is the maintained line; the older 1.0.x
+# releases do not install on Python 3.12.
+ChatterBot==1.2.15
+
+# Bundled English training corpora (greetings, conversations, computers,
+# science, humor).
+chatterbot-corpus==1.3.3
+
+# Required by ChatterBot to parse the YAML corpus files. It is an optional
+# dependency of ChatterBot and is NOT installed automatically — training fails
+# with OptionalDependencyImportError without it.
+PyYAML==6.0.3
+
+# Installed per the assignment's technical requirements. ChatterBot can use a
+# Django ORM storage backend in place of the SQLAlchemy one; this terminal
+# client uses SQLAlchemy, so Django is present but not imported at runtime.
+Django==6.1.1
+
+# Pulled in by ChatterBot; pinned so the tagger behaves identically across
+# installs.
+spacy==3.8.16
+SQLAlchemy==2.0.54
